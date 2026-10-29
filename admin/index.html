@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="same-origin">
+  <title>网站内容管理 - Jianxiong Fan</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./admin.css">
+  <script src="./schema.js" defer></script>
+  <script src="./start.js" defer></script>
+</head>
+<body>
+  <main id="setup" class="setup-card">
+    <a class="site-link" href="../index.html">← 返回个人网站</a>
+    <p class="eyebrow">JIANXIONG FAN</p>
+    <h1>网站内容管理</h1>
+    <p class="intro">在这里维护论文、稿件和作品。发布后，网站会通过 GitHub 和 Vercel 自动更新。</p>
+    <div id="connection-status" class="status" role="status" aria-live="polite">正在检查后台连接……</div>
+    <section id="setup-details" hidden>
+      <h2>首次启用需要完成 GitHub 登录配置</h2>
+      <p>现有网站已可浏览。管理功能需要在 Vercel 中设置这两个值，再重新部署：</p>
+      <ul id="missing-settings"></ul>
+      <p>详细操作请查看升级包中的 <strong>后台启用指南.md</strong>。Client Secret 只填写到 Vercel，不要放进仓库。</p>
+    </section>
+    <section id="origin-details" hidden>
+      <p>请使用已配置的后台地址登录：</p>
+      <a id="canonical-admin" class="primary-link"></a>
+    </section>
+    <div class="summary-grid">
+      <section><h2>论文与稿件</h2><p>新增论文、修改投稿状态，自动更新年份分类及数量。</p></section>
+      <section><h2>作品集</h2><p>填写作品名称、上传封面、粘贴 Notion 链接，并调整显示顺序。</p></section>
+    </div>
+    <p class="footnote">每次发布后，请等待 Vercel 部署成功，再刷新公开页面查看。管理入口不会出现在访客导航栏。</p>
+  </main>
+  <div id="nc-root"></div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "repository": "KishonFan/website1025",
+  "branch": "main",
+  "siteUrl": "https://website1025.vercel.app",
+  "allowedLogin": "KishonFan",
+  "scope": "public_repo"
+}

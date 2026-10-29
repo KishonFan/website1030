@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "title": "Driving School",
+      "url": "https://www.notion.so/Driving-School-23b91e68272080729cfcd6383bf7f8fd?source=copy_link",
+      "image": "/assets/dRIVINGsCHOOL.png",
+      "tag": "HCI",
+      "visible": true
+    },
+    {
+      "title": "New Year Painting World",
+      "url": "https://www.notion.so/New-Year-Painting-World-24191e682720806ab0f3f63f0e871b9d?source=copy_link",
+      "image": "/assets/pAINTING.png",
+      "tag": "HCI",
+      "visible": true
+    },
+    {
+      "title": "AR NanYue Museum",
+      "url": "https://www.notion.so/AR-NanYue-Museum-23b91e68272080b788dde19159a14422?source=copy_link",
+      "image": "/assets/ARNANYUE.png",
+      "tag": "AR",
+      "visible": true
+    },
+    {
+      "title": "Travel of People with Visual Impairments",
+      "url": "https://www.notion.so/Travel-of-People-with-Visual-Impairments-24191e682720805b9438ffe56f0db46b?source=copy_link",
+      "image": "/assets/tRAVELING.png",
+      "tag": "UX",
+      "visible": true
+    },
+    {
+      "title": "Foshan New Year Posters Museum",
+      "url": "https://www.notion.so/Foshan-New-Year-Posters-Museum-24191e68272080898d0fdaf4d7edd69a?source=copy_link",
+      "image": "/assets/HUAGUAN.png",
+      "tag": "VR+HCI",
+      "visible": true
+    },
+    {
+      "title": "Poetic Rhythms of the Song Dynasty",
+      "url": "https://www.notion.so/Poetic-Rhythms-of-the-Song-Dynasty-24191e682720805eb581d133018b0e09?source=copy_link",
+      "image": "/assets/SONGJING.png",
+      "tag": "AI+HCI",
+      "visible": true
+    },
+    {
+      "title": "The Lost Chronicles of Jiuzhang: Enigma of the Mathematical Art",
+      "url": "https://www.notion.so/The-Lost-Chronicles-of-Jiuzhang-Enigma-of-the-Mathematical-Art-24191e682720804d8223e8119949ac49?source=copy_link",
+      "image": "/assets/JIUZHANG.png",
+      "tag": "Games+VR",
+      "visible": true
+    },
+    {
+      "title": "Sea Home",
+      "url": "https://youtu.be/av4Tu4pcMdI",
+      "image": "/assets/SEA.png",
+      "tag": "Modeling",
+      "visible": true
+    }
+  ]
+}

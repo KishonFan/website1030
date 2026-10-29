@@ -1,0 +1,12 @@
+{
+  "name": "jianxiong-academic-cms",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "engines": { "node": "22.x" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/preview.mjs",
+    "test": "node --test tests/content.test.mjs tests/auth.test.mjs"
+  }
+}
