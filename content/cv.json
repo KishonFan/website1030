@@ -75,22 +75,27 @@
         "items": [
           {
             "date": "2022",
+            "body": "First Prize, Robot Application and Innovation Competition (RAICOM), National Finals.",
+            "visible": true
+          },
+          {
+            "date": "2022",
             "body": "Third Prize, 17th Challenge Cup National Undergraduate Academic and Technological Works Competition, National Finals.",
             "visible": true
           },
           {
-            "date": "2025",
-            "body": "First Prize, China Creative Challenges Contest, Guangdong Division.",
-            "visible": true
-          },
-          {
-            "date": "2024",
-            "body": "Second Prize, 15th Lanqiao Cup National Finals.",
+            "date": "2023",
+            "body": "Third Prize, National College Student Digital Media Technology Works and Creative Competition, National Finals.",
             "visible": true
           },
           {
             "date": "2024",
             "body": "Second Prize, 9th Cross-Strait Emerging Design Competition · Huacan Award, National Finals.",
+            "visible": true
+          },
+          {
+            "date": "2024",
+            "body": "Second Prize, 15th Lanqiao Cup National Finals.",
             "visible": true
           },
           {
@@ -109,13 +114,8 @@
             "visible": true
           },
           {
-            "date": "2023",
-            "body": "Third Prize, National College Student Digital Media Technology Works and Creative Competition.",
-            "visible": true
-          },
-          {
-            "date": "2022",
-            "body": "First Prize, Robot Application and Innovation Competition (RAICOM), National Finals.",
+            "date": "2025",
+            "body": "First Prize, China Creative Challenges Contest, Guangdong Division.",
             "visible": true
           }
         ]
