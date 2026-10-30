@@ -9,13 +9,18 @@
         "title": "Scholarships & Honours",
         "items": [
           {
-            "date": "2026",
-            "body": "**GDUT Elite Innovation Talent**; **Outstanding Master's Graduate**.",
+            "date": "2022, 2025",
+            "body": "**National Scholarship**, Ministry of Education, China. CNY 8,000 (2022); CNY 20,000 (2025).",
             "visible": true
           },
           {
-            "date": "2022, 2025",
-            "body": "**National Scholarship**, Ministry of Education, China. CNY 8,000 (2022); CNY 20,000 (2025).",
+            "date": "2020, 2021",
+            "body": "**National Encouragement Scholarship**, Department of Education of Guangdong Province. CNY 6,000.",
+            "visible": true
+          },
+          {
+            "date": "2026",
+            "body": "**GDUT Elite Innovation Talent**; **Outstanding Master's Graduate**.",
             "visible": true
           },
           {
@@ -49,18 +54,13 @@
             "date": "2022"
           },
           {
-            "date": "2020, 2021",
-            "body": "**National Encouragement Scholarship**, Department of Education of Guangdong Province. CNY 6,000.",
+            "date": "2020, 2022",
+            "body": "Academic Merit Scholarship; Outstanding Student Leader Scholarship, GDUT. CNY 500 per award.",
             "visible": true
           },
           {
             "date": "2021",
             "body": "Outstanding Student, AR/VR Interaction Design Workshop.",
-            "visible": true
-          },
-          {
-            "date": "2020, 2022",
-            "body": "Academic Merit Scholarship; Outstanding Student Leader Scholarship, GDUT. CNY 500 per award.",
             "visible": true
           },
           {
