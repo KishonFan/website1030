@@ -20,12 +20,22 @@
           },
           {
             "visible": true,
-            "body": "**Outstanding Master's Graduate**, GDUT.",
+            "body": "Outstanding Master's Graduate, GDUT.",
             "date": "2026"
           },
           {
             "date": "2026",
             "body": "GDUT Elite Innovation Talent, GDUT.",
+            "visible": true
+          },
+          {
+            "date": "2023",
+            "body": "Outstanding Bachelor's Graduate, GDUT (top 3%).",
+            "visible": true
+          },
+          {
+            "date": "2021",
+            "body": "Members of the National Outstanding Social Practice Team, The Central Committee of the Communist Young League.",
             "visible": true
           },
           {
@@ -44,11 +54,6 @@
             "visible": true
           },
           {
-            "date": "2023",
-            "body": "**Outstanding Bachelor's Graduate**, GDUT (top 3%).",
-            "visible": true
-          },
-          {
             "date": "2022",
             "body": "First-Class Outstanding Student Scholarship, GDUT. CNY 2,000",
             "visible": true
@@ -61,11 +66,6 @@
           {
             "date": "2020, 2022",
             "body": "Academic Merit Scholarship; Outstanding Student Leader Scholarship, GDUT. CNY 500 per award.",
-            "visible": true
-          },
-          {
-            "date": "2021",
-            "body": "Members of the National Outstanding Social Practice Team, The Central Committee of the Communist Young League.",
             "visible": true
           },
           {
