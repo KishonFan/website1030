@@ -3,76 +3,79 @@
   "items": [
     {
       "authors": "Jianxiong Fan, Rouqin Wu, Chaolan Tang, & Xian Yang",
-      "url": "",
-      "venue": "International Journal of Human–Computer Interaction",
-      "visible": true,
-      "status": "",
-      "kind": "published",
-      "title": "Empowering Vocational Training for Middle-aged, Elderly, and Low-educated Individuals: A Design Approach for Entertainment-Based Learning",
-      "year": 2026,
-      "doi": "10.1080/10447318.2025.2536624",
-      "journalId": "ijhci",
       "keywords": [
         "Entertainment-based learning",
         "Vocational training",
         "Social media",
         "Video element design",
         "PLS-SEM"
-      ]
+      ],
+      "url": "",
+      "venue": "International Journal of Human–Computer Interaction",
+      "visible": true,
+      "journalId": "ijhci",
+      "status": "",
+      "kind": "published",
+      "title": "Empowering Vocational Training for Middle-aged, Elderly, and Low-educated Individuals: A Design Approach for Entertainment-Based Learning",
+      "year": 2026,
+      "doi": "10.1080/10447318.2025.2536624"
     },
     {
       "authors": "Jianxiong Fan, Rouqin Wu, Chaolan Tang, & Xian Yang",
+      "keywords": [
+        "MAO-LEA",
+        "Entertainment-based learning",
+        "Vocational training",
+        "Cognitive-affective processing",
+        "Autonomic regulation"
+      ],
       "url": "",
       "venue": "Thinking Skills and Creativity",
       "visible": true,
+      "journalId": "thinking-skills-and-creativity",
       "status": "",
       "kind": "published",
       "title": "Key Elements of Short-Video Entertainment-Based Learning for Vocational Training in Middle-Aged and Older Adults with Low Educational Attainment",
       "year": 2026,
-      "doi": "10.1016/j.tsc.2026.102295",
-      "journalId": "thinking-skills-and-creativity",
-      "keywords": [
-        "Short-video learning",
-        "Entertainment-based learning",
-        "Vocational training",
-        "Inclusive learning"
-      ]
+      "doi": "10.1016/j.tsc.2026.102295"
     },
     {
       "authors": "Rouqin Wu, Jianxiong Fan Chaolan Tang,Shuwei Huang, & Xian Yang",
+      "keywords": [
+        "Artistic creation",
+        "Think-aloud protocol",
+        "Coding",
+        "Lag sequential analysis",
+        "Creative thinking"
+      ],
       "url": "",
       "venue": "Thinking Skills and Creativity",
       "visible": true,
+      "journalId": "thinking-skills-and-creativity",
       "status": "",
       "kind": "published",
       "title": "Creative Thinking in Artistic Creation: Cognitive and Emotional Mechanisms of Interaction-based Thinking",
       "year": 2026,
-      "doi": "10.1016/j.tsc.2026.102297",
-      "journalId": "thinking-skills-and-creativity",
-      "keywords": [
-        "Creative thinking",
-        "Artistic creation",
-        "Cognition and emotion",
-        "Interaction-based thinking"
-      ]
+      "doi": "10.1016/j.tsc.2026.102297"
     },
     {
       "authors": "Rouqin Wu, Jianxiong Fan, Chaolan Tang, & Xian Yang",
+      "keywords": [
+        "Artistic creation",
+        "Interaction-based creative thinking",
+        "Think-aloud protocol",
+        "Structured Coding",
+        "Cognition"
+      ],
       "url": "",
       "venue": "Thinking Skills and Creativity, 56, 101750",
       "visible": true,
+      "journalId": "thinking-skills-and-creativity",
       "status": "",
       "kind": "published",
       "title": "Interaction-based creative thinking research and its application in artistic creation",
       "year": 2025,
-      "doi": "10.1016/j.tsc.2024.101750",
-      "journalId": "thinking-skills-and-creativity",
-      "keywords": [
-        "Interaction-based thinking",
-        "Creative thinking",
-        "Artistic creation",
-        "Interaction design"
-      ]
+      "doi": "10.1016/j.tsc.2024.101750"
     },
     {
       "authors": "Jianxiong Fan et al.",
