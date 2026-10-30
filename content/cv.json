@@ -19,8 +19,13 @@
             "visible": true
           },
           {
+            "visible": true,
+            "body": "**Outstanding Master's Graduate**",
+            "date": "2026"
+          },
+          {
             "date": "2026",
-            "body": "**GDUT Elite Innovation Talent**; **Outstanding Master's Graduate**.",
+            "body": "GDUT Elite Innovation Talent",
             "visible": true
           },
           {
