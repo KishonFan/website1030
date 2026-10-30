@@ -6,6 +6,12 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.work-cover img{transition:none}}
 
 /* Published articles: shared journal covers and metrics, with per-paper keywords. */
+/* CV descriptions edited in the CMS use the existing type scale and spacing. */
+.cv-entry-body{font-size:15px;line-height:1.75}
+.cv-entry-body p{margin:0 0 10px}
+.award-list p{margin:0}
+.cv-publications-link p{margin:0}
+.cv-entry-body>*:last-child{margin-bottom:0}
 .publication--published{padding-top:23px;padding-bottom:28px}
 .publication--published.has-journal-cover{display:grid;grid-template-columns:minmax(0,1fr) 116px;column-gap:28px;align-items:start}
 .publication-copy{min-width:0}

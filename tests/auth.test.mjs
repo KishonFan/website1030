@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 const { handleCms, signState, readState, COOKIE } = createRequire(import.meta.url)('../lib/cms-auth.cjs');
 const env = { GITHUB_OAUTH_CLIENT_ID: 'test-client-id', GITHUB_OAUTH_CLIENT_SECRET: 'test-only-client-secret' };
+const connection = createRequire(import.meta.url)('../cms.config.json');
 
 function response() {
   return { headers: {}, statusCode: 200, body: '', setHeader(name, value) { this.headers[name] = value; }, end(value = '') { this.body = value; } };
@@ -35,7 +36,7 @@ test('login uses the configured callback, scoped GitHub authorization, PKCE and 
   const url = new URL(start.headers.Location);
   assert.equal(start.statusCode, 302);
   assert.equal(url.origin, 'https://github.com');
-  assert.equal(url.searchParams.get('redirect_uri'), 'https://website1025.vercel.app/api/cms/callback');
+  assert.equal(url.searchParams.get('redirect_uri'), connection.siteUrl + '/api/cms/callback');
   assert.equal(url.searchParams.get('code_challenge_method'), 'S256');
   assert.equal(url.searchParams.get('scope'), 'public_repo');
   assert.ok(url.searchParams.get('code_challenge'));
@@ -84,7 +85,7 @@ test('successful callbacks send credentials only to the configured opener origin
   assert.ok(result.body.includes('authorization:github:success:'));
   assert.ok(result.body.includes('event.origin !== origin'));
   assert.ok(result.body.includes('event.source !== opener'));
-  assert.ok(result.body.includes('https://website1025.vercel.app'));
+  assert.ok(result.body.includes(connection.siteUrl));
   assert.ok(!result.body.includes(env.GITHUB_OAUTH_CLIENT_SECRET));
   assert.match(result.headers['Set-Cookie'], /Max-Age=0/);
   assert.equal(result.headers['Cache-Control'], 'no-store, max-age=0');

@@ -1,0 +1,49 @@
+{
+  "title": "About Me",
+  "description": "Jianxiong Fan researches human–computer interaction, cognition, learning, and interaction design.",
+  "body": "I am Jianxiong Fan, a researcher interested in **human–computer interaction**, cognition, and interaction design. I hold a Master's degree in Design Studies, specialising in Digital Creative Design Research, and a Bachelor's degree in Digital Media Technology from [Guangdong University of Technology (GDUT)](https://english.gdut.edu.cn/).\n\nMy research examines **cognitive and emotional dynamics in human–computer interaction** through mixed methods. I combine quantitative user experience measurement and statistical analysis with qualitative inquiry to inform the design of products and service systems.\n\nMy recent work explores short-video entertainment-based learning for vocational training, with a focus on middle-aged and older adults with low educational attainment. I also study the cognitive, emotional, and behavioural mechanisms of interaction-based creative thinking. I am particularly interested in extending this work to **AI-supported learning and human–AI collaboration**.",
+  "skillsTitle": "Research & Technical Skills",
+  "skills": [
+    {
+      "title": "Research methods",
+      "description": "Mixed methods; field research and interviews; questionnaires; factor analysis; cluster analysis; structural equation modelling; think-aloud protocols; behavioural coding; lag sequential analysis.",
+      "visible": true
+    },
+    {
+      "title": "Analysis tools",
+      "description": "SPSS, AMOS, SmartPLS, MATLAB.",
+      "visible": true
+    },
+    {
+      "title": "Experimental methods",
+      "description": "EEG/ERP, eye-tracking, and multichannel physiological recording.",
+      "visible": true
+    },
+    {
+      "title": "Design & prototyping",
+      "description": "Unity-based AR/VR interaction; Figma; Adobe Photoshop; Premiere Pro; Maya; 3ds Max.",
+      "visible": true
+    }
+  ],
+  "interestsTitle": "Research Interests",
+  "interests": [
+    {
+      "title": "Human–computer interaction & human–AI collaboration",
+      "description": "Cognition, emotion, user experience, trust, and human agency, explored through mixed-methods research.",
+      "visible": true
+    },
+    {
+      "title": "Immersive interaction & creativity",
+      "description": "AR/VR experiences, digital cultural heritage, creative thinking, and human–AI co-creation.",
+      "visible": true
+    },
+    {
+      "title": "AI-supported learning & decision-making",
+      "description": "Entertainment-based learning and adaptive AI support for professional training and decision-making.",
+      "visible": true
+    }
+  ],
+  "exploreTitle": "Explore My Work",
+  "exploreBody": "You can read my [publications and manuscripts](/publications/index.html), explore my [design portfolio](/works/index.html), or find my education, research experience, and achievements in my [CV](/cv/index.html).",
+  "contactMessage": "For research conversations and collaboration, please contact me at"
+}

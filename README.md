@@ -1,8 +1,10 @@
 # Jianxiong Fan — Academic Website with CMS
 
-The public design and existing content are retained from `KishonFan/website1025`. Publications and work cards are generated from editable JSON by a dependency-free Node.js build. Decap CMS 3.17.3 is vendored with its license and npm integrity metadata.
+The public design and existing content are retained from `KishonFan/website1030`. All four public pages and the shared profile are generated from editable JSON. Decap CMS 3.17.3 and the build-only Marked 18.1.2 parser are vendored with their licenses and integrity metadata; no npm install is required.
 
 Read [后台启用指南.md](./后台启用指南.md) for the owner setup steps.
+
+For an already working website, read [About-Me-CV后台升级说明.md](./About-Me-CV后台升级说明.md) to add the profile, About Me and CV forms without changing the login configuration.
 
 ## Vercel deployment
 
@@ -21,9 +23,14 @@ Optional overrides are listed in `.env.example`. Default repository, branch, log
 
 - `content/publications.json`: publication/manuscript metadata and an editable manuscript section note.
 - `content/works.json`: work cards, uploaded covers, categories and external destinations.
-- `assets/uploads/`: CMS image uploads.
-- Root `index.html` and `cv/index.html`: retained as authored.
-- `publications/index.html` and `works/index.html`: retained page shells with explicit CMS content markers. The build replaces only the marked content in its generated output.
+- `content/journals.json`: shared journal covers, JCR quartiles and dated impact factors.
+- `content/profile.json`: name, portrait, role, institution and contact details shared by all four pages.
+- `content/about.json`: biography, research/technical skills, research interests and internal links.
+- `content/cv.json`: CV introduction, education, research, projects, activities, achievements and PDF download path.
+- `assets/uploads/`: uploaded images and replacement CV PDFs.
+- All four HTML files retain the existing page shells, with explicit CMS markers. The generated output replaces the marked regions. Source HTML includes readable fallback content, while content edits belong in the JSON files or CMS.
+
+Biography and CV descriptions use Markdown strings from the richtext editor. The build escapes raw HTML, disables text-embedded images and restricts link protocols. The downloaded CV PDF is uploaded separately; changing the webpage does not regenerate that PDF.
 
 Article years and counts are calculated from visible published records. Manuscripts are a separate category, so accepting/publishing a manuscript is a category change rather than a duplicate entry. Work order follows the list order. The owner name is bolded automatically. HTML is escaped, links are limited to ordinary web URLs, and cover paths stay inside `assets/`.
 
@@ -37,8 +44,8 @@ CMS hiding controls public page visibility only; it is not a private storage bou
 
 ```text
 node scripts/build.mjs
-node --test tests/content.test.mjs tests/auth.test.mjs
+node --test tests/*.test.mjs
 node scripts/preview.mjs
 ```
 
-Unit checks cover content migration, automatic years/counts, category moves, visibility, original work destinations, unsafe content, state integrity/expiry, PKCE, owner/write-permission checks and credential handling. A real GitHub login and publication must be verified after the owner configures the OAuth app and deploys the production environment.
+Checks cover migration, shared profile updates on all four pages, new and reordered About Me/CV entries, visibility, PDF replacement, safe rich text, existing publication/work rendering and OAuth behavior. Local CMS forms can also be checked with the in-memory test backend. Production GitHub writes and Vercel deployment should be verified after uploading an update.

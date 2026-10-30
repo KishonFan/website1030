@@ -1,0 +1,286 @@
+{
+  "title": "CV",
+  "description": "Education, research experience, research projects, extracurricular activities, and achievements of Jianxiong Fan.",
+  "intro": "Education, research experience, projects, activities, and achievements.",
+  "pdf": "/assets/Jianxiong-Fan-CV.pdf",
+  "downloadLabel": "Download CV",
+  "education": {
+    "title": "Education",
+    "navigationLabel": "Education",
+    "visible": true,
+    "items": [
+      {
+        "title": "M.A. in Design Studies",
+        "date": "Sep 2023 – Jun 2026",
+        "subtitle": "Guangdong University of Technology · Digital Creative Design Research",
+        "body": "- Academic score: 91.1/100 (top 10%); thesis defence: 92.2/100.\n- Supervisor: Prof. Chaolan Tang; co-supervisor: Assoc. Prof. Xian Yang.\n- Honours: **GDUT Elite Innovation Talent**; **Outstanding Master's Graduate**.\n- Core courses: Design Psychology Research; User Research; Service Design Research.",
+        "visible": true
+      },
+      {
+        "title": "B.Eng. in Digital Media Technology",
+        "date": "Sep 2019 – Jun 2023",
+        "subtitle": "Guangdong University of Technology",
+        "body": "- Academic score: 88.86/100; ranked 3rd out of 58.\n- **Outstanding Bachelor's Graduate** (top 3%); recommended for postgraduate admission without the national entrance examination.\n- Core courses: Virtual Reality Technology; 3D Animation Technology Practice; C Language Programming.",
+        "visible": true
+      }
+    ]
+  },
+  "research": {
+    "title": "Research Experience",
+    "navigationLabel": "Research",
+    "visible": true,
+    "items": [
+      {
+        "title": "Short-Video Entertainment-Based Learning Design",
+        "date": "Feb 2022 – Present",
+        "subtitle": "Design and Development of a Defensive Driving Training System · Project No. 23HS0022",
+        "body": "- Investigated learning needs and cognitive, emotional, and behavioural responses among hazardous chemical transport drivers.\n- Used interviews, factor analysis, and K-means clustering to characterise learners and inform an entertainment-based learning approach.\n- Led the design of a short-video training app, backend management system, and immersive VR assessment platform.\n- Conducted a BIOPAC-based experiment with 48 target-group drivers and 48 younger university participants; compared physiological responses and preferences across short-video and text-and-graphics materials.\n- Analysed survey data from a six-month programme (N = 333) using an integrated TPB–TAM model (R² = .516).\n- Under academic supervision, proposed a three-dimensional cognitive-load framework. Outputs include two first-author journal articles, one manuscript under review, and one in preparation.",
+        "visible": true
+      },
+      {
+        "title": "Mechanisms of Interaction-Based Creative Thinking",
+        "date": "Sep 2023 – Present",
+        "subtitle": "Guangdong Basic and Applied Basic Research Foundation · Grant 2026A1515012303",
+        "body": "- Studied cognitive, emotional, and behavioural processes in artistic collage, comparing interaction-based and divergence-based thinking.\n- Contributed to literature review, experimental design, think-aloud protocols, cognitive and behavioural coding, and lag sequential analysis.\n- Co-authored two published journal articles and contributed to a submitted manuscript.\n- Led a follow-up EEG and eye-tracking study on emotional text; designed materials and procedures, established multimodal data collection protocols, and analysed EEG and eye-tracking data.",
+        "visible": true
+      },
+      {
+        "title": "Lab Assistant, Human-Centered Technology Lab",
+        "date": "Mar 2024 – Mar 2026",
+        "subtitle": "Guangdong University of Technology",
+        "body": "- Operated EEG, eye-tracking, and multichannel physiological recording systems.\n- Maintained and managed laboratory equipment as part of routine operations.",
+        "visible": true
+      }
+    ]
+  },
+  "projects": {
+    "title": "Research Projects",
+    "navigationLabel": "Projects",
+    "visible": true,
+    "items": [
+      {
+        "title": "University-level Undergraduate Training Program for Innovation and Entrepreneurship",
+        "date": "",
+        "subtitle": "**Lead Principal Investigator** · Project No. xj2022118450867",
+        "body": "",
+        "visible": true
+      },
+      {
+        "title": "National Undergraduate Training Program for Innovation and Entrepreneurship",
+        "date": "",
+        "subtitle": "**Participant** · Project No. Xj202111845739",
+        "body": "",
+        "visible": true
+      },
+      {
+        "title": "\"Pinnacle Program\" Funds for College Students' Science and Technology Innovation of Guangdong Province",
+        "date": "",
+        "subtitle": "**Participant** · Project No. pdjh2021a0152",
+        "body": "",
+        "visible": true
+      },
+      {
+        "title": "2022 Higher Education Scientific Research Planning Project",
+        "date": "",
+        "subtitle": "**Participant** · Grant No. 22SY0105",
+        "body": "",
+        "visible": true
+      },
+      {
+        "title": "Guangzhou Philosophy and Social Science Development \"14th Five-Year Plan\"",
+        "date": "",
+        "subtitle": "**Participant** · Grant No. 2025GZGJ44",
+        "body": "",
+        "visible": true
+      },
+      {
+        "title": "Guangdong Basic and Applied Basic Research Foundation",
+        "date": "",
+        "subtitle": "**Participant** · Grant No. 2026A1515012303",
+        "body": "",
+        "visible": true
+      }
+    ]
+  },
+  "activities": {
+    "title": "Extracurricular Activities & Research Exchange",
+    "navigationLabel": "Activities",
+    "visible": true,
+    "items": [
+      {
+        "title": "Research Exchange with Macao University of Science and Technology",
+        "date": "Jun – Aug 2024",
+        "subtitle": "Research communication and laboratory exchange",
+        "body": "- Led laboratory tours and explained the operating principles and research applications of Tobii Pro Nano and BIOPAC MP150.\n- Delivered an invited presentation at MUST on the team's applications of structural equation modelling.",
+        "visible": true
+      },
+      {
+        "title": "International Workshop on AR/VR Interaction Design",
+        "date": "Nov 2021 – Apr 2023",
+        "subtitle": "Advisors: Prof. Benlin Du, The Hong Kong Polytechnic University; Assoc. Prof. Ji Yi, GDUT",
+        "body": "- Led a university-level student innovation and entrepreneurship training project developing an interactive 3D exhibition system for Foshan New Year Posters.\n- Conducted field interviews, affinity mapping, user surveys, and service journey redesign; co-developed UI prototypes and Unity-based AR/VR modules.\n- Recognised as an Outstanding Student. Related outputs included two national and three provincial competition awards and two software copyright registrations.",
+        "visible": true
+      },
+      {
+        "title": "Park Accessibility in Age-Friendly Cities",
+        "date": "Jan – Dec 2022",
+        "subtitle": "2021 Guangdong Provincial Science and Technology Innovation Strategy Special Fund",
+        "body": "- Contributed to a team study of accessibility in Guangzhou's parks and green spaces for older adults and people with disabilities.\n- Combined field observation, interviews, surveys, and participatory action research to develop accessibility recommendations.\n- Team outcomes included a national Third Prize in the Challenge Cup, nine national and provincial media reports, and accessibility design guidelines with accompanying illustrations.",
+        "visible": true
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Achievements",
+    "navigationLabel": "Achievements",
+    "visible": true,
+    "groups": [
+      {
+        "title": "Scholarships & Honours",
+        "items": [
+          {
+            "date": "2026",
+            "body": "**GDUT Elite Innovation Talent**; **Outstanding Master's Graduate**.",
+            "visible": true
+          },
+          {
+            "date": "2022, 2025",
+            "body": "**National Scholarship**, Ministry of Education, China. CNY 8,000 (2022); CNY 20,000 (2025).",
+            "visible": true
+          },
+          {
+            "date": "2023–2025",
+            "body": "First-Class Academic Scholarship for Master's Students, GDUT. Three awards; CNY 10,000 per year.",
+            "visible": true
+          },
+          {
+            "date": "2025",
+            "body": "37 Interactive Entertainment Corporate Scholarship. CNY 4,000.",
+            "visible": true
+          },
+          {
+            "date": "2023–2024",
+            "body": "Elite Social Practice Scholarship, GDUT. CNY 200.",
+            "visible": true
+          },
+          {
+            "date": "2023",
+            "body": "**Outstanding Bachelor's Graduate**, GDUT (top 3%).",
+            "visible": true
+          },
+          {
+            "date": "2020, 2021",
+            "body": "**National Encouragement Scholarship**, Department of Education of Guangdong Province. CNY 6,000.",
+            "visible": true
+          },
+          {
+            "date": "2022",
+            "body": "First-Class Outstanding Student Scholarship (CNY 2,000); Advanced Individual, 26th Student Academic Science and Technology Festival, GDUT.",
+            "visible": true
+          },
+          {
+            "date": "2020, 2021",
+            "body": "Second-Class Outstanding Student Scholarship, GDUT. CNY 1,000 per award.",
+            "visible": true
+          },
+          {
+            "date": "2020, 2022",
+            "body": "Academic Merit Scholarship; Outstanding Student Leader Scholarship, GDUT. CNY 500 per award.",
+            "visible": true
+          },
+          {
+            "date": "2020, 2021",
+            "body": "Outstanding Practice Team Member, Summer Social Practice, GDUT.",
+            "visible": true
+          },
+          {
+            "date": "2021–2022",
+            "body": "Outstanding Student, AR/VR Interaction Design Workshop.",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "title": "Selected Competition Awards",
+        "items": [
+          {
+            "date": "2025",
+            "body": "First Prize, China Creative Challenges Contest, Guangdong Division.",
+            "visible": true
+          },
+          {
+            "date": "2024",
+            "body": "Second Prize, 15th Lanqiao Cup National Finals, Video Design.",
+            "visible": true
+          },
+          {
+            "date": "2024",
+            "body": "Second Prize, 9th Cross-Strait Emerging Design Competition · Huacan Award, National Finals.",
+            "visible": true
+          },
+          {
+            "date": "2024",
+            "body": "Grand Prize, 17th Digital Design Dimensions Show, Guangdong Division.",
+            "visible": true
+          },
+          {
+            "date": "2024",
+            "body": "First Prize, Milan Design Week China Collegiate Design Competition & Exhibition, Guangdong Division.",
+            "visible": true
+          },
+          {
+            "date": "2024",
+            "body": "First Prize, 12th Future Designer Awards, Guangdong Division.",
+            "visible": true
+          },
+          {
+            "date": "2023",
+            "body": "Third Prize, National College Student Digital Media Technology Works and Creative Competition.",
+            "visible": true
+          },
+          {
+            "date": "2022",
+            "body": "First Prize, Robot Application and Innovation Competition (RAICOM), National Finals.",
+            "visible": true
+          },
+          {
+            "date": "2022",
+            "body": "Third Prize, 17th Challenge Cup National Undergraduate Academic and Technological Works Competition.",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "title": "Software Copyrights & Exhibitions",
+        "items": [
+          {
+            "date": "2025",
+            "body": "Foshan New Year Posters Museum. Registration No. 2025SR0798459.",
+            "visible": true
+          },
+          {
+            "date": "2025",
+            "body": "New Year Painting World Software. Registration No. 2025SR0738059.",
+            "visible": true
+          },
+          {
+            "date": "2024",
+            "body": "Mathematical Puzzle VR Game. Registration No. 2024SR1834354.",
+            "visible": true
+          },
+          {
+            "date": "2025",
+            "body": "AR Nanyue Museum Software. Registered software copyright.",
+            "visible": true
+          },
+          {
+            "date": "2024",
+            "body": "Selected for the Intangible Cultural Heritage (Guangzhou) Expo.",
+            "visible": true
+          }
+        ]
+      }
+    ]
+  },
+  "publicationsLink": "See the complete [publication and manuscript list](/publications/index.html)."
+}

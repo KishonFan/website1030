@@ -63,11 +63,11 @@ test('page generation preserves the surrounding shell and refuses missing marker
   assert.throws(() => fillPage('<main>no markers</main>', 'WORKS', 'new'));
 });
 
-test('CMS targets the production repository and only its two editable JSON files, using existing asset uploads', () => {
-  const config = createConfig({ siteUrl: 'https://website1025.vercel.app', repository: 'KishonFan/website1025', branch: 'main' });
-  assert.equal(config.backend.repo, 'KishonFan/website1025');
+test('CMS connects all six editable files to the supplied production repository and existing uploads', () => {
+  const config = createConfig({ siteUrl: 'https://website1030.vercel.app', repository: 'KishonFan/website1030', branch: 'main' });
+  assert.equal(config.backend.repo, 'KishonFan/website1030');
   assert.equal(config.backend.branch, 'main');
-  assert.deepEqual(config.collections.map(collection => collection.files[0].file), ['content/publications.json', 'content/works.json']);
+  assert.deepEqual(config.collections.map(collection => collection.files[0].file), ['content/profile.json', 'content/about.json', 'content/cv.json', 'content/publications.json', 'content/works.json', 'content/journals.json']);
   assert.equal(config.media_folder, 'assets/uploads');
   assert.equal(config.load_config_file, false);
 });

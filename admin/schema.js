@@ -1,8 +1,9 @@
 (function (root, factory) {
-  const createConfig = factory();
+  const pages = typeof module === 'object' && module.exports ? require('./page-fields.js') : root.AcademicPageFields;
+  const createConfig = factory(pages);
   if (typeof module === 'object' && module.exports) module.exports = createConfig;
   else root.createAcademicCmsConfig = createConfig;
-})(typeof window === 'undefined' ? globalThis : window, function () {
+})(typeof window === 'undefined' ? globalThis : window, function (pages) {
   function createAcademicCmsConfig(connection) {
     const visible = { label: '在网站显示', name: 'visible', widget: 'boolean', default: true, hint: '关闭后从网页隐藏；资料仍保留在 GitHub 中。' };
     return {
@@ -11,11 +12,12 @@
       display_url: connection.siteUrl,
       site_url: connection.siteUrl,
       logo_url: connection.siteUrl + '/assets/portrait.jpg',
-      backend: { name: 'github', repo: connection.repository, branch: connection.branch, base_url: connection.siteUrl, auth_endpoint: 'api/cms/auth', commit_messages: { update: 'Update {{collection}} content', media_create: 'Upload work cover {{path}}', media_delete: 'Remove work cover {{path}}' } },
+      backend: { name: 'github', repo: connection.repository, branch: connection.branch, base_url: connection.siteUrl, auth_endpoint: 'api/cms/auth', commit_messages: { update: 'Update {{collection}} content', media_create: 'Upload website media {{path}}', media_delete: 'Remove website media {{path}}' } },
       media_folder: 'assets/uploads',
       public_folder: '/assets/uploads',
       editor: { preview: false },
       collections: [
+        ...pages.collections(),
         {
           name: 'publications', label: '论文与稿件', format: 'json',
           files: [{
@@ -78,6 +80,12 @@
   }
   createAcademicCmsConfig.validateEntry = ({ entry }) => {
     const data = entry.get('data');
+    const page = entry.get('collection') || entry.get('slug');
+    const validator = { profile: pages.validateProfile, about: pages.validateAbout, cv: pages.validateCv }[page];
+    if (validator) {
+      validator(data.toJS());
+      return data;
+    }
     const items = data.get('items');
     const records = items ? items.toJS() : [];
     const journals = entry.get('collection') === 'journals' || entry.get('slug') === 'journals' || records.some(record => Object.hasOwn(record, 'name') && !record.kind);
