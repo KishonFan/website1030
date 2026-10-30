@@ -1,13 +1,22 @@
 import { cp, mkdir, readFile, writeFile, access } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { publicationContent, worksContent, fillPage, imagePath } from '../lib/render.mjs';
+import { publicationContent, worksContent, fillPage, imagePath, journalIndex } from '../lib/render.mjs';
 
 export async function build(root = resolve(dirname(fileURLToPath(import.meta.url)), '..'), destination = resolve(root, 'public')) {
   const publications = JSON.parse(await readFile(resolve(root, 'content/publications.json'), 'utf8'));
   const works = JSON.parse(await readFile(resolve(root, 'content/works.json'), 'utf8'));
-  const papers = publicationContent(publications.items, publications.manuscriptNote || '');
+  const journals = JSON.parse(await readFile(resolve(root, 'content/journals.json'), 'utf8'));
+  const papers = publicationContent(publications.items, publications.manuscriptNote || '', journals.items);
   const projects = worksContent(works.items);
+  const index = journalIndex(journals.items);
+  const usedJournalIds = new Set(publications.items.filter(item => item.kind === 'published' && item.visible !== false).map(item => item.journalId).filter(Boolean));
+  for (const id of usedJournalIds) {
+    const journal = index.get(id);
+    if (!journal.cover) continue;
+    try { await access(resolve(root, imagePath(journal.cover))); }
+    catch { throw new Error(`Journal cover does not exist: ${journal.cover}`); }
+  }
   for (const work of works.items.filter(item => item.visible !== false)) {
     try { await access(resolve(root, imagePath(work.image))); }
     catch { throw new Error(`Work cover does not exist: ${work.image}`); }

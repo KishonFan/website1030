@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": "ijhci",
+      "name": "International Journal of Human–Computer Interaction",
+      "cover": "/assets/journals/ijhci.jpg",
+      "url": "https://www.tandfonline.com/journals/hihc20",
+      "indexing": "",
+      "jcrQuartile": "Q1",
+      "jcrBasis": "best",
+      "jcrYear": null,
+      "jcrCategory": "",
+      "impactFactor": 6.1,
+      "impactFactorYear": 2025,
+      "metricsUrl": "https://www.tandfonline.com/journals/hihc20/about-this-journal",
+      "checkedAt": "2026-10-30",
+      "sourceNote": "Publisher reports 2025 Journal Impact Factor 6.1 and JCR Impact Factor Best Quartile Q1. The quartile year is not separately stated, so it is left blank."
+    },
+    {
+      "id": "thinking-skills-and-creativity",
+      "name": "Thinking Skills and Creativity",
+      "cover": "/assets/journals/thinking-skills-and-creativity.jpg",
+      "url": "https://www.sciencedirect.com/journal/thinking-skills-and-creativity",
+      "indexing": "SSCI",
+      "jcrQuartile": "Q1",
+      "jcrBasis": "reported",
+      "jcrYear": null,
+      "jcrCategory": "",
+      "impactFactor": 5.3,
+      "impactFactorYear": 2025,
+      "metricsUrl": "",
+      "checkedAt": "2026-10-30",
+      "sourceNote": "SSCI Q1 and 2025 Journal Impact Factor 5.3 supplied by the website owner on 2026-10-30. No specific JCR category or quartile year was supplied."
+    }
+  ]
+}
