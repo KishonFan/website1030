@@ -26,7 +26,9 @@
                 { label: '条目类型', name: 'kind', widget: 'select', default: 'manuscript', options: [{ label: '已发表论文', value: 'published' }, { label: '未发表稿件 Manuscript', value: 'manuscript' }] },
                 { label: '论文标题', name: 'title', widget: 'string' },
                 { label: '作者', name: 'authors', widget: 'string', hint: '按论文顺序填写，Jianxiong Fan 会自动加粗。' },
-                { label: '发表年份', name: 'year', widget: 'number', value_type: 'int', min: 1900, max: 2200, required: false, hint: '已发表论文必须填写；未发表稿件可以留空。' },
+                // The number widget treats legacy null values as zero when min/max are set.
+                // Validate the range in preSave so manuscripts can keep a blank year.
+                { label: '发表年份', name: 'year', widget: 'number', value_type: 'int', step: 1, default: '', required: false, hint: '已发表论文必须填写；未发表稿件可以留空。填写时请输入 1900–2200 之间的整数年份。' },
                 { label: '期刊或会议', name: 'venue', widget: 'string', required: false },
                 { label: 'DOI', name: 'doi', widget: 'string', required: false, hint: '例如 10.1016/j.tsc.2026.102295，也可粘贴完整 DOI 链接。' },
                 { label: '其他阅读链接', name: 'url', widget: 'string', required: false, hint: '以 https:// 开头；已发表论文优先使用 DOI。' },
@@ -55,8 +57,13 @@
     const data = entry.get('data');
     const items = data.get('items');
     if (items) for (const record of items.toJS()) {
-      if (record.kind === 'published' && (!record.year || !Number.isInteger(Number(record.year)) || Number(record.year) < 1900 || Number(record.year) > 2200)) {
-        throw new Error('已发表论文需要填写有效的发表年份。');
+      const hasYear = record.year !== null && record.year !== undefined && String(record.year).trim() !== '';
+      const label = record.title ? '“' + record.title + '”：' : '';
+      if (record.kind === 'published' && !hasYear) {
+        throw new Error(label + '已发表论文需要填写有效的发表年份。');
+      }
+      if (hasYear && (!Number.isInteger(Number(record.year)) || Number(record.year) < 1900 || Number(record.year) > 2200)) {
+        throw new Error(label + '发表年份需要填写 1900–2200 之间的整数。');
       }
       if (record.url) {
         let url;
