@@ -74,13 +74,18 @@
         "title": "Selected Competition Awards",
         "items": [
           {
+            "date": "2022",
+            "body": "Third Prize, 17th Challenge Cup National Undergraduate Academic and Technological Works Competition, National Finals.",
+            "visible": true
+          },
+          {
             "date": "2025",
             "body": "First Prize, China Creative Challenges Contest, Guangdong Division.",
             "visible": true
           },
           {
             "date": "2024",
-            "body": "Second Prize, 15th Lanqiao Cup National Finals, Video Design.",
+            "body": "Second Prize, 15th Lanqiao Cup National Finals.",
             "visible": true
           },
           {
@@ -111,11 +116,6 @@
           {
             "date": "2022",
             "body": "First Prize, Robot Application and Innovation Competition (RAICOM), National Finals.",
-            "visible": true
-          },
-          {
-            "date": "2022",
-            "body": "Third Prize, 17th Challenge Cup National Undergraduate Academic and Technological Works Competition.",
             "visible": true
           }
         ]
