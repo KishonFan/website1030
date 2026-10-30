@@ -65,8 +65,13 @@
           },
           {
             "date": "2020, 2022",
-            "body": "Academic Merit Scholarship; Outstanding Student Leader Scholarship, GDUT. CNY 500 per award.",
+            "body": "Academic Merit Scholarship, GDUT. CNY 500 per award.",
             "visible": true
+          },
+          {
+            "visible": true,
+            "body": "Outstanding Student Leader Scholarship, GDUT. CNY 200 per award.",
+            "date": "2020, 2022"
           },
           {
             "date": "2021",
