@@ -2,81 +2,81 @@
   "manuscriptNote": "Status as listed in my October 2026 CV.",
   "items": [
     {
-      "kind": "published",
-      "title": "Empowering Vocational Training for Middle-aged, Elderly, and Low-educated Individuals: A Design Approach for Entertainment-Based Learning",
       "authors": "Jianxiong Fan, Rouqin Wu, Chaolan Tang, & Xian Yang",
-      "year": 2026,
-      "venue": "International Journal of Human–Computer Interaction",
-      "doi": "10.1080/10447318.2025.2536624",
       "url": "",
+      "venue": "Thinking Skills and Creativity",
+      "visible": true,
       "status": "",
-      "visible": true
-    },
-    {
       "kind": "published",
       "title": "Key Elements of Short-Video Entertainment-Based Learning for Vocational Training in Middle-Aged and Older Adults with Low Educational Attainment",
-      "authors": "Jianxiong Fan, Rouqin Wu, Chaolan Tang, & Xian Yang",
       "year": 2026,
-      "venue": "Thinking Skills and Creativity",
-      "doi": "10.1016/j.tsc.2026.102295",
-      "url": "",
-      "status": "",
-      "visible": true
+      "doi": "10.1016/j.tsc.2026.102295"
     },
     {
+      "authors": "Jianxiong Fan, Rouqin Wu, Chaolan Tang, & Xian Yang",
+      "url": "",
+      "venue": "International Journal of Human–Computer Interaction",
+      "visible": true,
+      "status": "",
+      "kind": "published",
+      "title": "Empowering Vocational Training for Middle-aged, Elderly, and Low-educated Individuals: A Design Approach for Entertainment-Based Learning",
+      "year": 2026,
+      "doi": "10.1080/10447318.2025.2536624"
+    },
+    {
+      "authors": "Rouqin Wu, Jianxiong Fan Chaolan Tang,Shuwei Huang, & Xian Yang",
+      "url": "",
+      "venue": "Thinking Skills and Creativity",
+      "visible": true,
+      "status": "",
       "kind": "published",
       "title": "Creative Thinking in Artistic Creation: Cognitive and Emotional Mechanisms of Interaction-based Thinking",
-      "authors": "Rouqin Wu, Jianxiong Fan Chaolan Tang,Shuwei Huang, & Xian Yang",
       "year": 2026,
-      "venue": "Thinking Skills and Creativity",
-      "doi": "10.1016/j.tsc.2026.102297",
-      "url": "",
-      "status": "",
-      "visible": true
+      "doi": "10.1016/j.tsc.2026.102297"
     },
     {
+      "authors": "Rouqin Wu, Jianxiong Fan, Chaolan Tang, & Xian Yang",
+      "url": "",
+      "venue": "Thinking Skills and Creativity, 56, 101750",
+      "visible": true,
+      "status": "",
       "kind": "published",
       "title": "Interaction-based creative thinking research and its application in artistic creation",
-      "authors": "Rouqin Wu, Jianxiong Fan, Chaolan Tang, & Xian Yang",
       "year": 2025,
-      "venue": "Thinking Skills and Creativity, 56, 101750",
-      "doi": "10.1016/j.tsc.2024.101750",
-      "url": "",
-      "status": "",
-      "visible": true
+      "doi": "10.1016/j.tsc.2024.101750"
     },
     {
+      "authors": "Jianxiong Fan et al.",
+      "url": "",
+      "venue": "Information Processing & Management",
+      "visible": true,
+      "status": "Under review",
       "kind": "manuscript",
       "title": "From Psychophysiological Process Fit to Technology Acceptance: A Dynamic Adaptation Mechanism in Short-Video-Based Safety Training",
-      "authors": "Jianxiong Fan et al.",
       "year": null,
-      "venue": "Information Processing & Management",
-      "doi": "",
-      "url": "",
-      "status": "Under review",
-      "visible": true
+      "doi": ""
     },
     {
+      "authors": "Jianxiong Fan et al.",
+      "url": "",
+      "venue": "",
+      "visible": true,
+      "status": "In preparation",
       "kind": "manuscript",
       "title": "Reconceptualising Cognitive Load in Short-Video Vocational Training: A Three-Dimensional Framework Supported by Psychophysiological and Behavioural Evidence",
-      "authors": "Jianxiong Fan et al.",
       "year": null,
-      "venue": "",
-      "doi": "",
-      "url": "",
-      "status": "In preparation",
-      "visible": true
+      "doi": ""
     },
     {
+      "authors": "Rouqin Wu, Jianxiong Fan et al.",
+      "url": "",
+      "venue": "The Journal of Creative Behavior",
+      "visible": true,
+      "status": "Submitted",
       "kind": "manuscript",
       "title": "A Study on the observable behavioral differences of different types of creative thinking in artistic creation",
-      "authors": "Rouqin Wu, Jianxiong Fan et al.",
       "year": null,
-      "venue": "The Journal of Creative Behavior",
-      "doi": "",
-      "url": "",
-      "status": "Submitted",
-      "visible": true
+      "doi": ""
     }
   ]
 }
