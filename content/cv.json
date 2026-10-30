@@ -223,6 +223,19 @@
         "visible": true
       },
       {
+        "visible": true,
+        "body": "",
+        "title": "Design and Development of a Defensive Driving Training System",
+        "subtitle": "**Participant** · Grant No. 23HS0022"
+      },
+      {
+        "title": "Guangdong Basic and Applied Basic Research Foundation",
+        "date": "",
+        "subtitle": "**Participant** · Grant No. 2026A1515012303",
+        "body": "",
+        "visible": true
+      },
+      {
         "title": "National Undergraduate Training Program for Innovation and Entrepreneurship",
         "date": "",
         "subtitle": "**Participant** · Project No. Xj202111845739",
@@ -233,13 +246,6 @@
         "title": "\"Pinnacle Program\" Funds for College Students' Science and Technology Innovation of Guangdong Province",
         "date": "",
         "subtitle": "**Participant** · Project No. pdjh2021a0152",
-        "body": "",
-        "visible": true
-      },
-      {
-        "title": "Guangdong Basic and Applied Basic Research Foundation",
-        "date": "",
-        "subtitle": "**Participant** · Grant No. 2026A1515012303",
         "body": "",
         "visible": true
       }
@@ -254,7 +260,7 @@
         "title": "Short-Video Entertainment-Based Learning Design",
         "date": "Feb 2022 – Present",
         "subtitle": "Design and Development of a Defensive Driving Training System · Project No. 23HS0022",
-        "body": "- Investigated learning needs and cognitive, emotional, and behavioural responses among hazardous chemical transport drivers.\n- Used interviews, factor analysis, and K-means clustering to characterise learners and inform an entertainment-based learning approach.\n- Led the design of a short-video training app, backend management system, and immersive VR assessment platform.\n- Conducted a BIOPAC-based experiment with 48 target-group drivers and 48 younger university participants; compared physiological responses and preferences across short-video and text-and-graphics materials.\n- Analysed survey data from a six-month programme (N = 333) using an integrated TPB–TAM model (R² = .516).\n- Under academic supervision, proposed a three-dimensional cognitive-load framework. Outputs include two first-author journal articles, one manuscript under review, and one in preparation.",
+        "body": "* Investigated learning needs and cognitive, emotional, and behavioural responses among hazardous chemical transport drivers.\n* Used interviews, factor analysis, and K-means clustering to characterise learners and inform an entertainment-based learning approach.\n* Led the design of a short-video training app, backend management system, and immersive VR assessment platform.\n* Analysed survey data from a six-month programme (N = 333) using an integrated TPB–TAM model (R² = .516).\n* Conducted a BIOPAC-based experiment with 48 target-group drivers and 48 younger university participants; compared physiological responses and preferences across short-video and text-and-graphics materials.\n* Under academic supervision, proposed a three-dimensional cognitive-load framework. Outputs include two first-author journal articles, one manuscript under review, and one in preparation.",
         "visible": true
       },
       {
