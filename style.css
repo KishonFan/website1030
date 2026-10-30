@@ -29,3 +29,30 @@
   .has-journal-cover .journal-cover img{height:106px}
   .journal-metric{font-size:11px}
 }
+
+/* Keep site navigation visible and the desktop profile below it. */
+:root{--masthead-height:89px;--profile-offset:42px}
+html{scroll-padding-top:calc(var(--masthead-height) + 24px)}
+.masthead{position:sticky;top:0;z-index:100;background:#fff}
+.skip-link{z-index:200}
+.cv section{scroll-margin-top:0}
+@media(min-width:761px){
+  .profile{
+    position:sticky;
+    top:calc(var(--masthead-height) + var(--profile-offset));
+    max-height:calc(100vh - var(--masthead-height) - var(--profile-offset) - 24px);
+    max-height:calc(100dvh - var(--masthead-height) - var(--profile-offset) - 24px);
+    overflow-y:auto;
+    overflow-x:hidden;
+    scrollbar-width:thin;
+  }
+}
+@media(max-width:1100px){:root{--profile-offset:35px}}
+@media(max-width:760px){
+  :root{--masthead-height:74px}
+  .masthead{max-height:100vh;max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
+  .profile{position:static;max-height:none;overflow:visible}
+}
+@media print{
+  .masthead,.profile{position:static;max-height:none;overflow:visible}
+}
