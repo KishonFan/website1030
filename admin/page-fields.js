@@ -36,11 +36,28 @@
           { label: '学校或单位', name: 'institution', widget: 'text', required: false, hint: '可以换行，显示在所有页面的个人资料栏。' },
           text('学校或单位链接', 'institutionUrl', { required: false }),
           text('Email', 'email', { required: false }),
-          text('ORCID 主页链接', 'orcid', { required: false }),
-          text('LinkedIn 主页链接', 'linkedin', { required: false }),
           text('WeChat ID', 'wechatId', { required: false }),
           { label: '微信二维码', name: 'wechatQr', widget: 'image', choose_url: false, required: false,
             hint: '微信号与二维码都清空时，网页不显示 WeChat 入口。' },
+          { label: '学术主页与社交链接', name: 'links', widget: 'list', required: false, default: [], collapsed: true,
+            label_singular: '链接', summary: '{{fields.label}}',
+            hint: '可以新增 Google Scholar、ORCID、LinkedIn 或其他主页，拖动调整顺序。这里的顺序会同步到四个页面。',
+            fields: [
+              text('显示名称', 'label', { hint: '例如 Google Scholar、ORCID、GitHub。' }),
+              text('主页网址', 'url', { pattern: ['^https?://[^\\s]+$', '请填写完整的 https:// 或 http:// 地址。'] }),
+              { label: '图标', name: 'icon', widget: 'select', default: 'auto', options: [
+                { label: '自动识别', value: 'auto' },
+                { label: 'Google Scholar / 学术', value: 'scholar' },
+                { label: 'ORCID', value: 'orcid' },
+                { label: 'LinkedIn', value: 'linkedin' },
+                { label: 'GitHub', value: 'github' },
+                { label: 'ResearchGate', value: 'researchgate' },
+                { label: '个人网站', value: 'website' },
+                { label: '通用链接', value: 'link' },
+              ], hint: '自动识别常见平台；其他网址使用通用链接图标。也可以手动选择。' },
+              visible,
+            ],
+          },
         ],
       }] },
       { name: 'about', label: 'About Me 首页', format: 'json', files: [{
@@ -124,6 +141,21 @@
     for (const key of ['location', 'institution', 'wechatId']) string(data[key], key);
     for (const key of ['institutionUrl', 'orcid', 'linkedin']) url(data[key], key);
     if (filled(data.email) && !/^[^\s<>"@]+@[^\s<>"@]+\.[^\s<>"@]+$/.test(data.email)) throw new Error('请填写有效的 Email 地址。');
+    for (const link of profileLinks(data)) {
+      string(link.label, '链接显示名称', true);
+      string(link.url, link.label + '的网址', true);
+      url(link.url, link.label + '的网址');
+      if (link.icon && !['auto', 'scholar', 'orcid', 'linkedin', 'github', 'researchgate', 'website', 'link'].includes(link.icon)) throw new Error(link.label + '：请选择列表中的图标。');
+    }
+  }
+  function profileLinks(data) {
+    // An explicitly empty list must stay empty. Old profiles without the field
+    // still render their original ORCID and LinkedIn during an incremental update.
+    if (Object.hasOwn(data, 'links')) return list(data.links, '学术主页与社交链接');
+    return [
+      data.orcid ? { label: 'ORCID', url: data.orcid, icon: 'orcid' } : null,
+      data.linkedin ? { label: 'LinkedIn', url: data.linkedin, icon: 'linkedin' } : null,
+    ].filter(Boolean);
   }
   function validateAbout(data) {
     for (const key of ['title', 'body', 'skillsTitle', 'interestsTitle']) string(data[key], key, true);
@@ -153,5 +185,5 @@
       }
     }
   }
-  return { collections, validateProfile, validateAbout, validateCv, assetPath };
+  return { collections, validateProfile, validateAbout, validateCv, assetPath, profileLinks };
 });

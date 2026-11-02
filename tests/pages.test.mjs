@@ -34,12 +34,14 @@ test('raw HTML, inline events, unsafe protocols and image syntax cannot execute 
   assert.equal(safeTextLink('#education'), '#education');
 });
 
-test('CV migration keeps every existing entry, award group, grant, amount and requested emphasis', () => {
-  assert.deepEqual(['education', 'research', 'projects', 'activities'].map(key => cv[key].items.length), [2, 3, 6, 3]);
-  assert.deepEqual(cv.achievements.groups.map(group => group.items.length), [12, 9, 5]);
-  const html = cvContent(cv);
-  for (const text of ['xj2022118450867', 'Xj202111845739', 'pdjh2021a0152', '22SY0105', '2025GZGJ44', '2026A1515012303', 'CNY 20,000', 'CNY 10,000 per year', 'CNY 6,000']) assert.ok(html.includes(text), text);
-  for (const text of ['National Scholarship', 'National Encouragement Scholarship', 'GDUT Elite Innovation Talent']) assert.ok(html.includes('<strong>' + text + '</strong>'));
+test('CV grant numbers, amounts and emphasis remain supported independently of edits to the live CV', () => {
+  // Use a fixed sample rather than pinning counts in the owner's editable CV.
+  const sample = structuredClone(cv);
+  sample.projects.items = [{ title: 'Sample project', subtitle: '**Principal Investigator** · Grant No. SAMPLE-2027', body: '', visible: true }];
+  sample.achievements.groups = [{ title: 'Scholarships & Honours', items: [{ date: '2027', body: '**National Scholarship**; **National Encouragement Scholarship**; **GDUT Elite Innovation Talent**; **Outstanding Master\'s Graduate**; **Outstanding Bachelor\'s Graduate**. CNY 20,000; CNY 10,000 per year; CNY 6,000.', visible: true }] }];
+  const html = cvContent(sample);
+  for (const text of ['SAMPLE-2027', 'CNY 20,000', 'CNY 10,000 per year', 'CNY 6,000']) assert.ok(html.includes(text), text);
+  for (const text of ['National Scholarship', 'National Encouragement Scholarship', 'GDUT Elite Innovation Talent', 'Principal Investigator']) assert.ok(html.includes('<strong>' + text + '</strong>'));
   assert.match(html, /<strong>Outstanding Master/);
   assert.match(html, /<strong>Outstanding Bachelor/);
 });
@@ -67,7 +69,7 @@ test('new and reordered About Me and CV entries appear immediately, while hidden
 });
 
 test('optional contact fields and PDF can be cleared without empty links or unusable controls', () => {
-  const empty = { ...profile, email: '', location: '', institution: '', wechatId: '', wechatQr: '', orcid: '', linkedin: '' };
+  const empty = { ...profile, email: '', location: '', institution: '', wechatId: '', wechatQr: '', orcid: '', linkedin: '', links: [] };
   const html = profileHtml(empty, '../');
   assert.ok(!html.includes('contact-toggle'));
   assert.ok(!html.includes('mailto:'));

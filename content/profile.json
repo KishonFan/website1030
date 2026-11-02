@@ -6,8 +6,26 @@
   "institution": "Guangdong University\nof Technology",
   "institutionUrl": "",
   "email": "jianxiongfan@outlook.com",
-  "orcid": "https://orcid.org/0009-0006-9184-7654",
-  "linkedin": "https://www.linkedin.com/in/jianxiongfan/",
   "wechatId": "Kishon_Fan",
-  "wechatQr": "/assets/wechat.jpg"
+  "wechatQr": "/assets/wechat.jpg",
+  "links": [
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?hl=zh-CN&user=GCnpjpoAAAAJ",
+      "icon": "auto",
+      "visible": true
+    },
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0009-0006-9184-7654",
+      "icon": "auto",
+      "visible": true
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jianxiongfan/",
+      "icon": "auto",
+      "visible": true
+    }
+  ]
 }

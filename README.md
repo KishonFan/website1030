@@ -32,6 +32,8 @@ Optional overrides are listed in `.env.example`. Default repository, branch, log
 
 Biography and CV descriptions use Markdown strings from the richtext editor. The build escapes raw HTML, disables text-embedded images and restricts link protocols. The downloaded CV PDF is uploaded separately; changing the webpage does not regenerate that PDF.
 
+Academic and social profiles are editable in `profile.links`: each entry has a display label, an ordinary web URL, an automatic/manual icon and a visibility switch. Array order controls sidebar order on all four pages. Google Scholar, ORCID and LinkedIn are included, and the owner can add other profiles without code changes. Email and WeChat remain dedicated fields. Legacy `orcid`/`linkedin` fields are supported only when `links` is absent; an explicitly empty list remains empty. See [更新说明-联系方式与学术主页.md](./更新说明-联系方式与学术主页.md) for installation and editing steps.
+
 Article years and counts are calculated from visible published records. Manuscripts are a separate category, so accepting/publishing a manuscript is a category change rather than a duplicate entry. Work order follows the list order. The owner name is bolded automatically. HTML is escaped, links are limited to ordinary web URLs, and cover paths stay inside `assets/`.
 
 ## Authentication
