@@ -1,13 +1,11 @@
 {
+  "wechatId": "",
+  "wechatQr": "",
   "name": "Jianxiong Fan",
-  "portrait": "/assets/portrait.jpg",
-  "role": "Human–Computer Interaction\nDesign & User Research",
   "location": "Guangzhou, China",
-  "institution": "Guangdong University\nof Technology",
+  "role": "Human–Computer Interaction\nDesign & User Research",
   "institutionUrl": "",
-  "email": "jianxiongfan@outlook.com",
-  "wechatId": "Kishon_Fan",
-  "wechatQr": "/assets/wechat.jpg",
+  "institution": "Guangdong University\nof Technology",
   "links": [
     {
       "label": "Google Scholar",
@@ -27,5 +25,7 @@
       "icon": "auto",
       "visible": true
     }
-  ]
+  ],
+  "portrait": "/assets/portrait.jpg",
+  "email": "jianxiongfan@outlook.com"
 }
