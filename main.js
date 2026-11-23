@@ -1,10 +1,19 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const siteNavigation = document.querySelector('#site-navigation');
 const mobileNavigation = window.matchMedia('(max-width: 760px)');
+const languageSwitch = document.querySelector('.language-switch');
+
+languageSwitch?.addEventListener('click', () => {
+  const language = languageSwitch.dataset.language;
+  if (language !== 'en' && language !== 'zh') return;
+  const secure = location.protocol === 'https:' ? '; Secure' : '';
+  document.cookie = 'site-language=' + language + '; Max-Age=31536000; Path=/; SameSite=Lax' + secure;
+});
 
 function setMenuOpen(open, returnFocus = false) {
   menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  const label = open ? menuToggle.dataset.closeLabel : menuToggle.dataset.openLabel;
+  menuToggle.setAttribute('aria-label', label || (open ? 'Close navigation menu' : 'Open navigation menu'));
   siteNavigation.classList.toggle('is-open', open);
   if (returnFocus) menuToggle.focus();
 }
@@ -52,8 +61,8 @@ document.querySelector('#wechat-copy')?.addEventListener('click', async () => {
   const id = dialog.querySelector('strong').textContent;
   try {
     await navigator.clipboard.writeText(id);
-    status.textContent = 'WeChat ID copied.';
+    status.textContent = dialog.dataset.copySuccess || 'WeChat ID copied.';
   } catch {
-    status.textContent = 'Please copy the ID above: ' + id;
+    status.textContent = (dialog.dataset.copyManually || 'Please copy the ID above:') + ' ' + id;
   }
 });

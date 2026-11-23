@@ -2,13 +2,18 @@
   "wechatId": "",
   "wechatQr": "",
   "name": "Jianxiong Fan",
+  "nameZh": "范坚雄",
   "location": "Guangzhou, China",
+  "locationZh": "中国广州",
   "role": "Human–Computer Interaction\nDesign & User Research",
+  "roleZh": "人机交互\n设计与用户研究",
   "institutionUrl": "",
   "institution": "Guangdong University\nof Technology",
+  "institutionZh": "广东工业大学",
   "links": [
     {
       "label": "Google Scholar",
+      "labelZh": "谷歌学术",
       "url": "https://scholar.google.com/citations?hl=zh-CN&user=GCnpjpoAAAAJ",
       "icon": "scholar",
       "visible": true
@@ -21,6 +26,7 @@
     },
     {
       "label": "LinkedIn",
+      "labelZh": "领英",
       "url": "https://www.linkedin.com/in/jianxiongfan/",
       "icon": "auto",
       "visible": true

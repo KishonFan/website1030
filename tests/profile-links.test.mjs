@@ -25,6 +25,7 @@ test('Google Scholar and the original ORCID and LinkedIn destinations are presen
 
 test('new profile links can be added, reordered, hidden and deleted without changing the renderer', () => {
   const next = structuredClone(profile);
+  next.wechatId = 'test-wechat-id';
   next.links = [
     { label: 'Another profile', url: 'https://example.org/profile?year=2027', icon: 'auto' },
     next.links[2],
@@ -77,7 +78,7 @@ test('the new CMS list supports creation, removal, reordering, visibility and au
   const fields = config.collections.find(collection => collection.name === 'profile').files[0].fields;
   const links = fields.find(field => field.name === 'links');
   assert.equal(links.widget, 'list');
-  assert.deepEqual(links.fields.map(field => field.name), ['label', 'url', 'icon', 'visible']);
+  assert.deepEqual(links.fields.map(field => field.name), ['label', 'labelZh', 'url', 'icon', 'visible']);
   assert.ok(!fields.some(field => ['orcid', 'linkedin'].includes(field.name)));
   assert.match(profileLinkIcon({ url: scholar }), /<svg/);
   assert.match(profileLinkIcon({ url: 'https://orcid.org/a' }), /brand-icon orcid/);

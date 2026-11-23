@@ -1,0 +1,49 @@
+{
+  "title": "关于我",
+  "description": "范坚雄关注人机交互、认知、学习与交互设计。",
+  "body": "我叫范坚雄，研究兴趣包括**人机交互**、认知与交互设计。我在[广东工业大学](https://www.gdut.edu.cn/)获得设计学硕士学位，研究方向为数字创意设计，同时拥有该校数字媒体技术专业的工学学士学位。\n\n我用混合研究方法考察**人机交互中的认知与情绪过程**。我将用户体验的量化测量和统计分析与定性研究结合，为产品与服务系统设计提供依据。\n\n我近期关注如何将短视频娱乐化学习用于职业培训，尤其是如何支持受教育程度较低的中老年学习者。我也研究基于交互的创造性思维中的认知、情绪与行为机制，并希望将这些研究拓展到 **AI 辅助学习与人机协作**。",
+  "skillsTitle": "研究与技术技能",
+  "skills": [
+    {
+      "title": "研究方法",
+      "description": "混合研究方法、实地调研与访谈、问卷调查、因子分析、聚类分析、结构方程模型、出声思考、行为编码与滞后序列分析。",
+      "visible": true
+    },
+    {
+      "title": "分析工具",
+      "description": "SPSS、AMOS、SmartPLS、MATLAB。",
+      "visible": true
+    },
+    {
+      "title": "实验方法",
+      "description": "脑电与事件相关电位（EEG/ERP）、眼动追踪、多通道生理信号记录。",
+      "visible": true
+    },
+    {
+      "title": "设计与原型制作",
+      "description": "基于 Unity 的 AR/VR 交互开发，以及 Figma、Adobe Photoshop、Premiere Pro、Maya 和 3ds Max。",
+      "visible": true
+    }
+  ],
+  "interestsTitle": "研究兴趣",
+  "interests": [
+    {
+      "title": "人机交互与人与人工智能协作",
+      "description": "运用混合研究方法，探究认知、情绪、用户体验、信任与人的能动性。",
+      "visible": true
+    },
+    {
+      "title": "沉浸式交互与创造力",
+      "description": "关注 AR/VR 体验、数字文化遗产、创造性思维与人机共创。",
+      "visible": true
+    },
+    {
+      "title": "AI 辅助学习与决策",
+      "description": "研究面向专业培训与决策的娱乐化学习和自适应 AI 支持。",
+      "visible": true
+    }
+  ],
+  "exploreTitle": "论文、作品与经历",
+  "exploreBody": "你可以查看我的[论文与稿件](/zh/publications/)、[设计作品](/zh/works/)以及[教育背景、研究经历与成果](/zh/cv/)。",
+  "contactMessage": "如希望交流研究或洽谈合作，欢迎发邮件至"
+}

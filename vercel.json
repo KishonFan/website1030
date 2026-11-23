@@ -4,6 +4,28 @@
   "buildCommand": "node scripts/build.mjs",
   "outputDirectory": "public",
   "functions": { "api/cms.js": { "maxDuration": 30 } },
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": false },
+    {
+      "source": "/",
+      "has": [{ "type": "cookie", "key": "site-language", "value": "zh" }],
+      "destination": "/zh/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "cookie", "key": "site-language", "value": "en" }],
+      "destination": "/en/",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "CN" }],
+      "destination": "/zh/",
+      "permanent": false
+    },
+    { "source": "/", "destination": "/en/", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/api/cms/:action", "destination": "/api/cms?action=:action" }
   ],

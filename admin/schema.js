@@ -19,14 +19,16 @@
       collections: [
         ...pages.collections(),
         {
-          name: 'publications', label: '论文与稿件', format: 'json',
+          name: 'publications', label: '论文与稿件 · 中英文', format: 'json',
           files: [{
-            name: 'publications', label: '编辑论文和稿件列表', file: 'content/publications.json',
+            name: 'publications', label: '编辑两版共用的论文和稿件', file: 'content/publications.json', preview_path: 'en/publications/',
             fields: [
-              { label: '稿件区说明（可留空）', name: 'manuscriptNote', widget: 'string', required: false, hint: '更新稿件后，可同步修改或清空原有日期说明。' },
+              { label: '稿件区说明（英文）', name: 'manuscriptNote', widget: 'string', required: false, hint: '更新稿件后，可同步修改或清空原有日期说明。' },
+              { label: '稿件区说明（中文）', name: 'manuscriptNoteZh', widget: 'string', required: false, hint: '留空时沿用英文说明。' },
               { label: '论文或稿件', name: 'items', widget: 'list', collapsed: true, summary: '{{fields.title}}', fields: [
                 { label: '条目类型', name: 'kind', widget: 'select', default: 'manuscript', options: [{ label: '已发表论文', value: 'published' }, { label: '未发表稿件 Manuscript', value: 'manuscript' }] },
-                { label: '论文标题', name: 'title', widget: 'string' },
+                { label: '论文原题（英文）', name: 'title', widget: 'string' },
+                { label: '中文译题', name: 'titleZh', widget: 'string', required: false, hint: '中文版会同时显示译题和原题。留空则显示原题。' },
                 { label: '作者', name: 'authors', widget: 'string', hint: '按论文顺序填写，Jianxiong Fan 会自动加粗。' },
                 // The number widget treats legacy null values as zero when min/max are set.
                 // Validate the range in preSave so manuscripts can keep a blank year.
@@ -34,22 +36,27 @@
                 { label: '期刊或会议', name: 'venue', widget: 'string', required: false },
                 { label: 'DOI', name: 'doi', widget: 'string', required: false, hint: '例如 10.1016/j.tsc.2026.102295，也可粘贴完整 DOI 链接。' },
                 { label: '其他阅读链接', name: 'url', widget: 'string', required: false, hint: '以 https:// 开头；已发表论文优先使用 DOI。' },
-                { label: '稿件状态', name: 'status', widget: 'string', required: false, hint: '例如 In preparation、Submitted、Under review、Accepted。已发表论文不显示此字段。' },
+                { label: '稿件状态（英文）', name: 'status', widget: 'string', required: false, hint: '例如 In preparation、Submitted、Under review、Accepted。' },
+                { label: '稿件状态（中文）', name: 'statusZh', widget: 'string', required: false, hint: '留空时，常见投稿状态会在中文版自动显示为中文。' },
                 { label: '关联期刊（仅已发表论文）', name: 'journalId', widget: 'relation', collection: 'journals', file: 'journals', search_fields: ['items.*.name'], display_fields: ['items.*.name'], value_field: 'items.*.id', required: false, hint: '选择后自动使用该期刊的封面、JCR 分区和影响因子。未发表稿件不用填写。' },
-                { label: '论文关键词（仅已发表论文）', name: 'keywords', widget: 'list', required: false, default: [], collapsed: true, label_singular: '关键词', summary: '{{fields.keyword}}', field: { label: '关键词', name: 'keyword', widget: 'string' }, hint: '每项填写一个关键词；未发表稿件不用填写，也不会在前台显示。' },
+                { label: '论文关键词（英文）', name: 'keywords', widget: 'list', required: false, default: [], collapsed: true, label_singular: '关键词', summary: '{{fields.keyword}}', field: { label: '关键词', name: 'keyword', widget: 'string' }, hint: '每项填写一个关键词，仅在已发表论文中显示。' },
+                { label: '论文关键词（中文）', name: 'keywordsZh', widget: 'list', required: false, default: [], collapsed: true, label_singular: '中文关键词', field: { label: '关键词', name: 'keyword', widget: 'string' }, hint: '留空时中文版沿用英文关键词。' },
                 visible,
               ] },
             ],
           }],
         },
         {
-          name: 'works', label: '作品集', format: 'json',
-          files: [{ name: 'works', label: '编辑作品列表', file: 'content/works.json', fields: [
+          name: 'works', label: '作品集 · 中英文', format: 'json',
+          files: [{ name: 'works', label: '编辑两版共用的作品列表', file: 'content/works.json', preview_path: 'en/works/', fields: [
             { label: '作品', name: 'items', widget: 'list', collapsed: true, summary: '{{fields.title}}', hint: '通过列表中的排序控件调整作品展示顺序。', fields: [
-              { label: '作品名称', name: 'title', widget: 'string' },
+              { label: '作品名称（英文）', name: 'title', widget: 'string' },
+              { label: '作品名称（中文）', name: 'titleZh', widget: 'string', required: false },
               { label: 'Notion 或作品详情链接', name: 'url', widget: 'string', pattern: ['^https?://[^\\s]+$', '请填写完整的 https:// 或 http:// 链接。'] },
-              { label: '封面图片', name: 'image', widget: 'image', choose_url: false, hint: '上传后自动保存到网站仓库。' },
-              { label: '分类标签', name: 'tag', widget: 'string', hint: '例如 HCI、AR、UX、VR。' },
+              { label: '中文版作品详情链接', name: 'urlZh', widget: 'string', required: false, pattern: ['^https?://[^\\s]+$', '请填写完整的 https:// 或 http:// 链接。'], hint: '如果有独立的中文作品页，可填其网址。留空时两版共用上方链接。' },
+              { label: '封面图片（两版共用）', name: 'image', widget: 'image', choose_url: false, hint: '上传后自动保存到网站仓库。' },
+              { label: '分类标签（英文）', name: 'tag', widget: 'string', hint: '例如 HCI、AR、UX、VR。' },
+              { label: '分类标签（中文）', name: 'tagZh', widget: 'string', required: false },
               visible,
             ] },
           ] }],
@@ -80,7 +87,7 @@
   }
   createAcademicCmsConfig.validateEntry = ({ entry }) => {
     const data = entry.get('data');
-    const page = entry.get('collection') || entry.get('slug');
+    const page = String(entry.get('collection') || entry.get('slug') || '').replace(/-zh$/, '');
     const validator = { profile: pages.validateProfile, about: pages.validateAbout, cv: pages.validateCv }[page];
     if (validator) {
       validator(data.toJS());
@@ -99,15 +106,16 @@
       if (hasYear && (!Number.isInteger(Number(record.year)) || Number(record.year) < 1900 || Number(record.year) > 2200)) {
         throw new Error(label + '发表年份需要填写 1900–2200 之间的整数。');
       }
-      if (record.url) {
+      for (const value of [record.url, record.urlZh].filter(Boolean)) {
         let url;
-        try { url = new URL(record.url); } catch { throw new Error('请填写完整的 https:// 或 http:// 阅读链接。'); }
+        try { url = new URL(value); } catch { throw new Error('请填写完整的 https:// 或 http:// 阅读链接。'); }
         if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password) throw new Error('阅读链接必须是普通网页地址。');
       }
       if (record.doi && !/^10\.\d{4,9}\/\S+$/i.test(record.doi.trim().replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, ''))) {
         throw new Error('请核对 DOI 格式，或留空后使用其他阅读链接。');
       }
-      if (record.kind === 'published' && record.keywords && (!Array.isArray(record.keywords) || record.keywords.some(value => typeof value !== 'string'))) {
+      if (record.kind === 'published' && [record.keywords, record.keywordsZh].some(keywords =>
+        keywords && (!Array.isArray(keywords) || keywords.some(value => typeof value !== 'string')))) {
         throw new Error(label + '每个关键词都需要填写文字。');
       }
     }

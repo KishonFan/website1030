@@ -99,7 +99,7 @@ test('CMS page forms use the shipped richtext editor and validate new data befor
   for (const path of ['/assets/../../secret.pdf', 'https://example.org/cv.pdf', '/assets/uploads/wrong.png']) assert.throws(() => pageFields.assetPath(path, 'CV', 'pdf'));
 });
 
-test('an actual rebuild updates all four profile sidebars, About Me, CV and a replacement PDF while preserving publications and works', async () => {
+test('a rebuild publishes both languages, keeps shared links in sync and updates each CV independently', async () => {
   const fixture = await mkdtemp(resolve(root, '.test-pages-'));
   const files = ['assets', 'admin', 'vendor/decap-cms', 'content', 'index.html', 'cv', 'publications', 'works', 'style.css', 'main.js'];
   try {
@@ -108,7 +108,7 @@ test('an actual rebuild updates all four profile sidebars, About Me, CV and a re
     assert.deepEqual([initial.papers, initial.manuscripts, initial.works], [4, 3, 8]);
     const pubBefore = await readFile(resolve(fixture, 'public/publications/index.html'), 'utf8');
     const worksBefore = await readFile(resolve(fixture, 'public/works/index.html'), 'utf8');
-    const next = { ...profile, name: 'New Researcher', role: 'Human–AI Research\nDesign', email: 'new@example.org', wechatId: 'New_ID', portrait: '/assets/uploads/new-photo.jpg' };
+    const next = { ...profile, name: 'New Researcher', nameZh: '新姓名', role: 'Human–AI Research\nDesign', email: 'new@example.org', wechatId: 'New_ID', portrait: '/assets/uploads/new-photo.jpg' };
     await writeFile(resolve(fixture, 'content/profile.json'), JSON.stringify(next));
     await cp(resolve(fixture, 'assets/portrait.jpg'), resolve(fixture, 'assets/uploads/new-photo.jpg'));
     await writeFile(resolve(fixture, 'content/about.json'), JSON.stringify({ ...about, body: 'A newly published **introduction**.' }));
@@ -117,23 +117,43 @@ test('an actual rebuild updates all four profile sidebars, About Me, CV and a re
     nextCv.projects.items.unshift({ title: 'New funded project', subtitle: '**Principal Investigator** · 2027-A', body: '- New study', visible: true });
     await cp(resolve(fixture, 'assets/Jianxiong-Fan-CV.pdf'), resolve(fixture, 'assets/uploads/new-cv.pdf'));
     await writeFile(resolve(fixture, 'content/cv.json'), JSON.stringify(nextCv));
+    const aboutZh = await json('about.zh');
+    const cvZh = await json('cv.zh');
+    cvZh.research.items[0].title = '仅在中文版更新的研究项目';
+    await writeFile(resolve(fixture, 'content/about.zh.json'), JSON.stringify({ ...aboutZh, body: '中文版介绍支持**加粗**。' }));
+    await writeFile(resolve(fixture, 'content/cv.zh.json'), JSON.stringify(cvZh));
     await build(fixture);
     const contents = new Map();
-    for (const file of ['index.html', 'cv/index.html', 'publications/index.html', 'works/index.html']) {
-      const html = await readFile(resolve(fixture, 'public', file), 'utf8'); contents.set(file, html);
-      assert.ok(html.includes('class="profile-name" href='));
-      assert.ok(html.includes('>New Researcher</a>'));
-      assert.ok(html.includes('new@example.org'));
-      assert.ok(html.includes('assets/uploads/new-photo.jpg'));
-      assert.ok(html.includes('New_ID'));
-      assert.equal((html.match(/aria-current="page"/g) || []).length, 1);
+    for (const [language, tag, name, other] of [['en', 'en', 'New Researcher', 'zh'], ['zh', 'zh-CN', '新姓名', 'en']]) {
+      for (const section of ['', 'cv/', 'publications/', 'works/']) {
+        const file = `${language}/${section}index.html`;
+        const html = await readFile(resolve(fixture, 'public', file), 'utf8');
+        contents.set(file, html);
+        assert.ok(html.includes(`<html lang="${tag}">`), file);
+        assert.ok(html.includes(`class="profile-name" href="/${language}/">${name}</a>`), file);
+        assert.ok(html.includes(`class="language-switch" href="/${other}/${section}"`), file);
+        assert.ok(html.includes(`rel="canonical" href="https://www.jianxiongfan.cn/${language}/${section}"`), file);
+        assert.ok(html.includes('new@example.org'), file);
+        assert.ok(html.includes('src="/assets/uploads/new-photo.jpg"'), file);
+        assert.ok(html.includes('New_ID'), file);
+        assert.equal((html.match(/aria-current="page"/g) || []).length, 1, file);
+      }
     }
-    assert.ok(contents.get('index.html').includes('newly published <strong>introduction</strong>'));
-    assert.ok(contents.get('cv/index.html').includes('New funded project'));
-    assert.ok(contents.get('cv/index.html').includes('../assets/uploads/new-cv.pdf'));
+    assert.ok(contents.get('en/index.html').includes('newly published <strong>introduction</strong>'));
+    assert.ok(contents.get('zh/index.html').includes('中文版介绍支持<strong>加粗</strong>'));
+    assert.ok(contents.get('en/cv/index.html').includes('New funded project'));
+    assert.ok(contents.get('en/cv/index.html').includes('href="/assets/uploads/new-cv.pdf"'));
+    assert.ok(contents.get('zh/cv/index.html').includes('仅在中文版更新的研究项目'));
+    assert.ok(!contents.get('zh/cv/index.html').includes('New funded project'));
+    assert.ok(!contents.get('zh/cv/index.html').includes('href="/assets/uploads/new-cv.pdf"'));
+    assert.ok(contents.get('zh/cv/index.html').includes('href="/zh/publications/"'));
+    assert.ok(contents.get('en/cv/index.html').includes('href="/en/publications/"'));
     const region = (html, key) => html.split(`<!-- CMS:${key}:START -->`)[1].split(`<!-- CMS:${key}:END -->`)[0];
-    assert.equal(region(contents.get('publications/index.html'), 'PUBLICATIONS'), region(pubBefore, 'PUBLICATIONS'));
-    assert.equal(region(contents.get('works/index.html'), 'WORKS'), region(worksBefore, 'WORKS'));
+    assert.equal(region(contents.get('en/publications/index.html'), 'PUBLICATIONS'), region(pubBefore, 'PUBLICATIONS'));
+    assert.equal(region(contents.get('en/works/index.html'), 'WORKS'), region(worksBefore, 'WORKS'));
+    for (const page of ['publications/', 'works/', 'cv/']) {
+      assert.equal(await readFile(resolve(fixture, 'public', page, 'index.html'), 'utf8'), contents.get('en/' + page + 'index.html'));
+    }
     await writeFile(resolve(fixture, 'content/cv.json'), JSON.stringify({ ...nextCv, pdf: '/assets/uploads/missing.pdf' }));
     await assert.rejects(build(fixture), /CV PDF file does not exist/);
   } finally {

@@ -1,5 +1,6 @@
 {
   "manuscriptNote": "Status as listed in my October 2026 CV.",
+  "manuscriptNoteZh": "稿件状态以我 2026 年 10 月版简历所列为准。",
   "items": [
     {
       "authors": "Jianxiong Fan, Rouqin Wu, Chaolan Tang, & Xian Yang",
@@ -17,6 +18,8 @@
       "status": "",
       "kind": "published",
       "title": "Empowering Vocational Training for Middle-aged, Elderly, and Low-educated Individuals: A Design Approach for Entertainment-Based Learning",
+      "titleZh": "面向受教育程度较低的中老年人的职业培训：娱乐化学习的设计方法",
+      "keywordsZh": ["娱乐化学习", "职业培训", "社交媒体", "视频元素设计", "PLS-SEM"],
       "year": 2026,
       "doi": "10.1080/10447318.2025.2536624"
     },
@@ -36,6 +39,8 @@
       "status": "",
       "kind": "published",
       "title": "Key Elements of Short-Video Entertainment-Based Learning for Vocational Training in Middle-Aged and Older Adults with Low Educational Attainment",
+      "titleZh": "面向受教育程度较低的中老年人的职业培训：短视频娱乐化学习的关键要素",
+      "keywordsZh": ["受教育程度较低的中老年人（MAO-LEA）", "娱乐化学习", "职业培训", "认知与情绪加工", "自主神经调节"],
       "year": 2026,
       "doi": "10.1016/j.tsc.2026.102295"
     },
@@ -55,6 +60,8 @@
       "status": "",
       "kind": "published",
       "title": "Creative Thinking in Artistic Creation: Cognitive and Emotional Mechanisms of Interaction-based Thinking",
+      "titleZh": "艺术创作中的创造性思维：交互型思维的认知与情绪机制",
+      "keywordsZh": ["艺术创作", "出声思考", "编码", "滞后序列分析", "创造性思维"],
       "year": 2026,
       "doi": "10.1016/j.tsc.2026.102297"
     },
@@ -74,6 +81,8 @@
       "status": "",
       "kind": "published",
       "title": "Interaction-based creative thinking research and its application in artistic creation",
+      "titleZh": "基于交互的创造性思维及其在艺术创作中的应用研究",
+      "keywordsZh": ["艺术创作", "基于交互的创造性思维", "出声思考", "结构化编码", "认知"],
       "year": 2025,
       "doi": "10.1016/j.tsc.2024.101750"
     },
@@ -85,6 +94,7 @@
       "status": "Under review",
       "kind": "manuscript",
       "title": "From Psychophysiological Process Fit to Technology Acceptance: A Dynamic Adaptation Mechanism in Short-Video-Based Safety Training",
+      "titleZh": "从心理生理过程匹配到技术接受：短视频安全培训中的动态适配机制",
       "year": null,
       "doi": ""
     },
@@ -96,6 +106,7 @@
       "status": "In preparation",
       "kind": "manuscript",
       "title": "Reconceptualising Cognitive Load in Short-Video Vocational Training: A Three-Dimensional Framework Supported by Psychophysiological and Behavioural Evidence",
+      "titleZh": "重新理解短视频职业培训中的认知负荷：基于心理生理与行为证据的三维框架",
       "year": null,
       "doi": ""
     },
@@ -107,6 +118,7 @@
       "status": "Submitted",
       "kind": "manuscript",
       "title": "A Study on the observable behavioral differences of different types of creative thinking in artistic creation",
+      "titleZh": "艺术创作中不同类型创造性思维的可观察行为差异研究",
       "year": null,
       "doi": ""
     }

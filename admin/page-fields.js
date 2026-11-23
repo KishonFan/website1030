@@ -28,12 +28,16 @@
   function collections() {
     return [
       { name: 'profile', label: '个人资料（全站）', format: 'json', files: [{
-        name: 'profile', label: '姓名、头像和联系方式', file: 'content/profile.json', fields: [
-          text('姓名', 'name'),
+        name: 'profile', label: '中英文个人资料及共用联系方式', file: 'content/profile.json', fields: [
+          text('英文姓名', 'name'),
+          text('中文姓名', 'nameZh', { required: false, hint: '留空时显示英文姓名。' }),
           { label: '头像', name: 'portrait', widget: 'image', choose_url: false },
-          { label: '研究方向或身份', name: 'role', widget: 'text', hint: '每行会单独显示；对应头像旁边或下方的两行介绍。' },
-          text('所在地', 'location', { required: false }),
-          { label: '学校或单位', name: 'institution', widget: 'text', required: false, hint: '可以换行，显示在所有页面的个人资料栏。' },
+          { label: '研究方向或身份（英文）', name: 'role', widget: 'text', hint: '每行会单独显示。' },
+          { label: '研究方向或身份（中文）', name: 'roleZh', widget: 'text', required: false },
+          text('所在地（英文）', 'location', { required: false }),
+          text('所在地（中文）', 'locationZh', { required: false }),
+          { label: '学校或单位（英文）', name: 'institution', widget: 'text', required: false },
+          { label: '学校或单位（中文）', name: 'institutionZh', widget: 'text', required: false },
           text('学校或单位链接', 'institutionUrl', { required: false }),
           text('Email', 'email', { required: false }),
           text('WeChat ID', 'wechatId', { required: false }),
@@ -41,9 +45,10 @@
             hint: '微信号与二维码都清空时，网页不显示 WeChat 入口。' },
           { label: '学术主页与社交链接', name: 'links', widget: 'list', required: false, default: [], collapsed: true,
             label_singular: '链接', summary: '{{fields.label}}',
-            hint: '可以新增 Google Scholar、ORCID、LinkedIn 或其他主页，拖动调整顺序。这里的顺序会同步到四个页面。',
+            hint: '两版共用链接和顺序。可分别填写中英文显示名称。',
             fields: [
-              text('显示名称', 'label', { hint: '例如 Google Scholar、ORCID、GitHub。' }),
+              text('显示名称（英文）', 'label', { hint: '例如 Google Scholar、ORCID、GitHub。' }),
+              text('显示名称（中文）', 'labelZh', { required: false, hint: '留空时两版显示同一名称。' }),
               text('主页网址', 'url', { pattern: ['^https?://[^\\s]+$', '请填写完整的 https:// 或 http:// 地址。'] }),
               { label: '图标', name: 'icon', widget: 'select', default: 'auto', options: [
                 { label: '自动识别', value: 'auto' },
@@ -60,8 +65,12 @@
           },
         ],
       }] },
-      { name: 'about', label: 'About Me 首页', format: 'json', files: [{
-        name: 'about', label: '编辑自我介绍、技能和研究兴趣', file: 'content/about.json', fields: [
+      { name: 'about', label: '个人简介 · 中英文', format: 'json', files: ['en', 'zh'].map(language => ({
+        name: language === 'zh' ? 'about-zh' : 'about',
+        label: language === 'zh' ? '中文版 · 关于我' : 'English · About Me',
+        file: language === 'zh' ? 'content/about.zh.json' : 'content/about.json',
+        preview_path: language + '/',
+        fields: [
           text('页面标题', 'title'),
           text('搜索结果简介', 'description', { required: false, hint: '显示在搜索引擎摘要中的简短介绍。' }),
           rich('自我介绍', 'body', { required: true }),
@@ -77,9 +86,13 @@
           rich('作品与论文入口说明', 'exploreBody'),
           text('联系提示', 'contactMessage', { required: false, hint: '后面会自动附上“个人资料”中的邮箱；留空可隐藏。' }),
         ],
-      }] },
-      { name: 'cv', label: 'CV 简历', format: 'json', files: [{
-        name: 'cv', label: '编辑教育、经历、项目和成果', file: 'content/cv.json', fields: [
+      })) },
+      { name: 'cv', label: '简历 · 中英文', format: 'json', files: ['en', 'zh'].map(language => ({
+        name: language === 'zh' ? 'cv-zh' : 'cv',
+        label: language === 'zh' ? '中文版 · 简历' : 'English · CV',
+        file: language === 'zh' ? 'content/cv.zh.json' : 'content/cv.json',
+        preview_path: language + '/cv/',
+        fields: [
           text('页面标题', 'title'),
           text('搜索结果简介', 'description', { required: false }),
           text('页面开头说明', 'intro', { required: false }),
@@ -87,7 +100,7 @@
             media_folder: '/assets/uploads', public_folder: '/assets/uploads',
             pattern: ['\\.[pP][dD][fF]$', '请上传或选择 PDF 文件。'],
             hint: '上传完整的新版 PDF。下面编辑的是网页文字，不会自动改写 PDF；清空此项可隐藏下载按钮。' },
-          text('下载按钮文字', 'downloadLabel', { required: false, default: 'Download CV' }),
+          text('下载按钮文字', 'downloadLabel', { required: false, default: language === 'zh' ? '下载中文简历' : 'Download CV' }),
           cvSection('Education 教育背景', 'education'),
           cvSection('Research Experience 研究经历', 'research'),
           cvSection('Research Projects 参与或主持项目', 'projects'),
@@ -107,7 +120,7 @@
           ] },
           rich('底部论文列表链接', 'publicationsLink', { minimal: true, buttons: ['bold', 'italic', 'link'] }),
         ],
-      }] },
+      })) },
     ];
   }
 
@@ -138,11 +151,12 @@
     string(data.name, '姓名', true); string(data.role, '研究方向或身份', true);
     if (!filled(data.portrait)) throw new Error('请上传头像。');
     assetPath(data.portrait, '头像'); assetPath(data.wechatQr, '微信二维码');
-    for (const key of ['location', 'institution', 'wechatId']) string(data[key], key);
+    for (const key of ['nameZh', 'roleZh', 'location', 'locationZh', 'institution', 'institutionZh', 'wechatId']) string(data[key], key);
     for (const key of ['institutionUrl', 'orcid', 'linkedin']) url(data[key], key);
     if (filled(data.email) && !/^[^\s<>"@]+@[^\s<>"@]+\.[^\s<>"@]+$/.test(data.email)) throw new Error('请填写有效的 Email 地址。');
     for (const link of profileLinks(data)) {
       string(link.label, '链接显示名称', true);
+      string(link.labelZh, '链接的中文显示名称');
       string(link.url, link.label + '的网址', true);
       url(link.url, link.label + '的网址');
       if (link.icon && !['auto', 'scholar', 'orcid', 'linkedin', 'github', 'researchgate', 'website', 'link'].includes(link.icon)) throw new Error(link.label + '：请选择列表中的图标。');
